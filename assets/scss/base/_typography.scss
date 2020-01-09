@@ -1,0 +1,50 @@
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Muli', sans-serif;
+  line-height: 1.5;
+  font-weight: bold;
+  color: $text-light;
+  margin-bottom: 0;
+}
+
+h1 {font-size: 6.10rem; }
+h2 {font-size: 4.88rem; }
+h3 {font-size: 3.91rem; }
+h4 {font-size: 3.13rem; }
+h5 {font-size: 2.50rem; }
+h6 {font-size: 2rem; }
+
+p { 
+  color: $text-light;
+  font-family: 'Space Mono', monospace;
+  line-height: 1.5;
+}
+
+a {
+  text-decoration: none;
+  
+  &:focus, &:hover {
+    text-decoration: none;
+  }
+}
+
+.subtitle-text, .tiny-text, .micro-text {
+  font-family: 'Space Mono', monospace;
+  color: $text-light;
+  line-height: 1.5;
+}
+
+.subtitle-text {
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.tiny-text {
+  font-size: 15px;
+  font-weight: bold;
+  color: $text-dark;
+}
+
+.micro-text {
+  font-size: 11px;
+  font-weight: 300;
+}
