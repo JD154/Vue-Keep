@@ -1,37 +1,52 @@
 <template>
   <div class="app">
     <div class="container">
-      <AppLogo/>
+      <div class="logo-wrapper">
+        <img class="user-thumbnail" src="../assets/images/user-default.png" alt="default user">
+        <p class="logo">Vue <span class="logo-contrast">Keep</span></p>
+      </div>
       <div class="urgent-tasks">
-        <h6 class="section-title">My top</h6>
-        <p class="section-subtitle">Priority tasks</p>
-        <TodoUrgent/>
+        <div class="flex-header">
+          <div>
+            <h6 class="section-title">My top</h6>
+            <p class="section-subtitle">Priority tasks</p>
+          </div>
+        </div>
+        <TodoTop/>
       </div>
       <div class="all-tasks">
-        <h6 class="section-title">My list</h6>
-        <p class="section-subtitle"><span>{{todayTodos}} new</span> tasks today</p>
-        <TodoList/>
-        <div class="btn-wrapper">
-          <button class="btn loadmore-btn">Load more</button>
+        <div class="flex-header">
+          <div>
+            <h6 class="section-title">My list</h6>
+            <p class="section-subtitle"><span>{{todayTodos}} new</span> tasks today</p>
+          </div>
+          <NewTaskModal/>
         </div>
+        <TodoList/>
       </div>
     </div>
   </div>
 </template>
 
 <script>
-import AppLogo from '../components/AppLogo';
-import TodoUrgent from '../components/TodoUrgent';
+import TodoTop from '../components/TodoTop';
 import TodoList from '../components/TodoList';
+import NewTaskModal from '../components/NewTaskModal';
 
 import { mapGetters } from 'vuex';
 
 export default {
   name: 'index',
   components: {
-    AppLogo,
-    TodoUrgent,
-    TodoList
+    TodoTop,
+    TodoList,
+    NewTaskModal,
+  },
+  data() {
+    return {
+    }
+  },
+  methods: {
   },
   computed: {
     ...mapGetters('todos', [
@@ -42,6 +57,7 @@ export default {
 </script>
 
 <style lang="scss">
+
   .app {
     min-height: 100vh;
     padding-bottom: 56px;
@@ -53,37 +69,42 @@ export default {
     padding: $main-padding;
   }
 
-  .section-title {
-    font-size: 24px;
+  .user-thumbnail {
+    width: 40px;
+    height: 40px;
   }
 
-  .section-subtitle {
-    font-size: 14px;
-    margin-bottom: 20px;
+  .logo-wrapper {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+  }
+
+  .logo {
+    vertical-align: sub;
+    font-size: 1.7rem;
+    font-weight: 400;
+    margin: 0;
 
     span {
-      color: $primary-default;
-      font-weight: 700;
+      font-weight: bold;
     }
   }
 
-  .urgent-tasks, .all-tasks {
+  .section-subtitle {
+    span {
+      color: $primary-default;
+      font-weight: 400;
+    }
+  }
+
+  .flex-header {
     margin-top: 30px;
-  }
-
-  .btn-wrapper {
+    margin-bottom: 20px;
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
+    align-items: center;
   }
 
-  .btn {
-    padding: 10px 15px;
-    margin: 15px auto;
-  }
-
-  .loadmore-btn {
-    background-color: $primary-default;
-    color: #ffffff;
-  }
 </style>
 

@@ -27,10 +27,21 @@ a {
   }
 }
 
+.section-title {
+  font-size: 24px;
+  margin: 0;
+}
+
+.section-subtitle {
+  font-size: 14px;
+  margin: 0;
+}
+
 .subtitle-text, .tiny-text, .micro-text {
   font-family: 'Space Mono', monospace;
   color: $text-light;
   line-height: 1.5;
+  margin: 0;
 }
 
 .subtitle-text {
@@ -40,11 +51,10 @@ a {
 
 .tiny-text {
   font-size: 15px;
-  font-weight: bold;
-  color: $text-dark;
+  font-weight: 400;
 }
 
 .micro-text {
   font-size: 11px;
-  font-weight: 300;
+  font-weight: 400;
 }

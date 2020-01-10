@@ -5,7 +5,7 @@
   "author": "JD154 <jesus.blancof96@gmail.com>",
   "private": true,
   "scripts": {
-    "dev": "nuxt",
+    "dev": "NUXT_PORT=process.env.PORT nuxt",
     "build": "nuxt build",
     "start": "nuxt start",
     "generate": "nuxt generate",
@@ -16,6 +16,7 @@
   "dependencies": {
     "@nuxtjs/style-resources": "^1.0.0",
     "axios": "^0.19.1",
+    "moment": "^2.24.0",
     "normalize.css": "^8.0.1",
     "nuxt": "^2.0.0"
   },

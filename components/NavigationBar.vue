@@ -26,6 +26,15 @@ export default {
 </script>
 
 <style lang='scss'>
+
+  page-enter-active, .page-leave-active {
+    transition: all .30s ease-out;
+  }
+
+  .page-enter, .page-leave-active {
+    transform-origin: 50% 50%;
+  }
+  
   .nav-wrapper {
     position: fixed;
     display: flex;
@@ -36,7 +45,7 @@ export default {
     height: 56px;
     width: 100%;
     padding: 0 $main-padding;
-    border-top: 1px solid $border-dark;
+    border-top: 2px solid $border-dark;
   }
 
   .route {

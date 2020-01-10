@@ -1,18 +1,18 @@
 <template>
   <div class="scrollable-wrapper">
-    <Card v-for="todo in getUrgentTodos" :key="todo.id" :todo="todo"/>
+    <TodoCard v-for="todo in getUrgentTodos" :key="todo.id" :todo="todo" :isTop="true"/>
   </div>
 </template>
 
 <script>
-import Card from './Card';
+import TodoCard from './TodoCard';
 
 import { mapGetters } from 'vuex'
 
 export default {
-  name: 'TodoUrgent',
+  name: 'TodoTop',
   components: {
-    Card
+    TodoCard
   },
   computed: {
     ...mapGetters('todos', [
@@ -28,7 +28,6 @@ export default {
     display: grid;
     grid-gap: $grid-gap;
     grid-auto-flow: column;
-    grid-auto-columns: calc(50% - 20px);
     overflow-x: auto;
     padding: 2px 0;
     -webkit-overflow-scrolling: touch;
