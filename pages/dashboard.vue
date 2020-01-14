@@ -1,8 +1,9 @@
 <template>
   <div class="app">
     <div class="container">
-      <div class="section-wrapper">
-        <h6 class="section-title">Dashboard</h6>
+      <div class="logo-wrapper">
+        <img class="user-thumbnail" src="../assets/images/user-default.png" alt="default user">
+        <p class="logo">Dashboard</p>
       </div>
       <div class="flex-header">
         <div>
