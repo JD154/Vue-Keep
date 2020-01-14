@@ -56,18 +56,18 @@ export const state = () => ({
 
 export const actions = {
   async addTodo({ commit }, todo) {
-    commit('commitTodo', todo);
+    commit('COMMIT_TODO', todo);
   },
 
   async doneTask({ commit }, payload){
-    commit('commitDone', payload);
+    commit('COMMIT_DONE', payload);
   }
 };
 
 export const mutations = {
-  commitTodo: (state, todo) => state.todos.push(todo),
+  COMMIT_TODO: (state, todo) => state.todos.push(todo),
 
-  commitDone: (state, payload) => {
+  COMMIT_DONE: (state, payload) => {
     
     state.todos[payload.key1].done = payload.key2;
     console.log(payload.key2 + payload.key1);
