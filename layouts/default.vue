@@ -23,6 +23,32 @@ export default {
     background-color: $bg-light;
   }
 
+  .app {
+    min-height: 100vh;
+    padding-bottom: 56px;
+    position: relative;
+  }
+
+  .container {
+    height: 100%;
+    padding: $main-padding;
+  }
+
+  .flex-header {
+    margin-top: 30px;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .section-subtitle {
+    span {
+      color: $primary-default;
+      font-weight: 400;
+    }
+  }
+
   .btn-wrapper {
     display: flex;
     justify-content: center;

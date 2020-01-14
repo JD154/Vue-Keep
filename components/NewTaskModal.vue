@@ -10,21 +10,21 @@
           <h6 class="section-title">Create new task</h6>
           <p class="section-subtitle">In simple steps</p>
         </div>
-        <form action="#">
+        <form @submit.prevent="submitNewTodo()">
           <div class="input-field">
             <label class="tiny-text" for="task">Task</label>
-            <input type="text" name="Task" id="task">
+            <input v-model="taskInput" type="text" name="Task" id="task">
           </div>
           <div class="input-field">
             <label class="tiny-text" for="description">Description</label>
-            <textarea type="text" name="Description" id="description"></textarea>
+            <textarea v-model="descriptionInput" type="text" name="Description" id="description"></textarea>
           </div>
           <div class="input-field checkbox">
-            <input type="checkbox" name="isUrgent" id="isUrgent">
+            <input v-model="isImportantTask" type="checkbox" name="isUrgent" id="isUrgent">
             <label class="tiny-text" for="isUrgent"><span>Is important?</span></label>
           </div>
           <div class="btn-wrapper">
-            <button type="submit" class="btn">Add new task</button>
+            <button @click="modalTrigger" type="submit" class="btn">Create new task</button>
           </div>
         </form>
       </div>
@@ -33,10 +33,16 @@
 </template>
 
 <script>
+import moment from 'moment';
+import { mapActions, mapGetters } from 'vuex';
+
 export default {
   name: 'NewTaskModal',
   data() {
     return {
+      taskInput: '',
+      descriptionInput: '',
+      isImportantTask: false,
       scrollPosition: 0,
       modalIsOpen: false,
       styleObject: {}
@@ -65,9 +71,29 @@ export default {
         window.scrollTo(0, this.scrollPosition);
       }
     },
+    ...mapActions('todos', [
+      'addTodo',
+    ]),
+    submitNewTodo() {
+      let newTodo = {
+        id: this.getLastTodoID + 1,
+        date: moment().format("MMM Do YY"),
+        task: this.taskInput,
+        description: this.descriptionInput,
+        done: false,
+        isUrgent: this.isImportantTask,
+      }
+      this.addTodo(newTodo);
+      this.taskInput = '';
+      this.descriptionInput = '';
+      this.isImportantTask = false;
+    }
+
   },
   computed: {
-
+    ...mapGetters('todos', [
+      'getLastTodoID',
+    ]),
   },
 }
 </script>

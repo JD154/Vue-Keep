@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="card-wrapper">
-      <TodoCard v-for="todo in limitTodos" :key="todo.id" :todo="todo" :isTop="false"/>
+      <TodoCard v-for="(todo, index) in limitTodos" :key="index" :todo="todo" :isTop="false"/>
     </div>
     <div class="btn-wrapper">
       <transition name="fade">

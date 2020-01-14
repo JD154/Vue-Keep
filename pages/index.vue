@@ -58,17 +58,6 @@ export default {
 
 <style lang="scss">
 
-  .app {
-    min-height: 100vh;
-    padding-bottom: 56px;
-    position: relative;
-  }
-
-  .container {
-    height: 100%;
-    padding: $main-padding;
-  }
-
   .user-thumbnail {
     border-radius: 50%;
     width: 40px;
@@ -90,21 +79,6 @@ export default {
     span {
       font-weight: bold;
     }
-  }
-
-  .section-subtitle {
-    span {
-      color: $primary-default;
-      font-weight: 400;
-    }
-  }
-
-  .flex-header {
-    margin-top: 30px;
-    margin-bottom: 20px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
   }
 
 </style>

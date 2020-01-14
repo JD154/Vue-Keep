@@ -1,6 +1,6 @@
 <template>
   <div class="scrollable-wrapper">
-    <TodoCard v-for="todo in getUrgentTodos" :key="todo.id" :todo="todo" :isTop="true"/>
+    <TodoCard v-for="(todo, index) in getUrgentTodos" :key="index" :todo="todo" :isTop="true"/>
   </div>
 </template>
 

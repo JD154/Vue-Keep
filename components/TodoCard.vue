@@ -2,20 +2,20 @@
   <div class="card">
     <div class="urgent-todo" v-if="isTop">
       <p class="urgent-hint"></p>
-      <p class="micro-text">Ongoing</p>
+      <p class="micro-text">Important</p>
     </div>
     <div class="card-content">
       <div class="flex-content">
         <div>
-          <p class="todo-date micro-text">Created in {{todo.date}} </p>
-          <div :class="{'strike-text': taskIsDone}">
+          <p class="todo-date micro-text">{{todo.date}}</p>
+          <div :class="{'strike-text': todo.done}">
             <p class="subtitle-text">{{todo.task}}</p>
             <p v-if="todo.description" class="todo-description tiny-text">{{todo.description}}</p>
           </div>
         </div>
         <div class="action-wrapper" v-if="!isTop">
-          <i v-if="!taskIsDone" @click="checkTask" class="task-open material-icons">check_box_outline_blank</i>
-          <i v-else @click="checkTask" class="material-icons" :class="{'task-done': taskIsDone}">check_box</i>
+          <i v-if="!todo.done" @click="checkTask" class="task-open material-icons">check_box_outline_blank</i>
+          <i v-else @click="checkTask" class="material-icons" :class="{'task-done': todo.done}">check_box</i>
         </div>
       </div>
     </div>
@@ -23,6 +23,8 @@
 </template>
 
 <script>
+import { mapActions } from 'vuex';
+
 export default {
   name: 'Card',
   props: {
@@ -31,13 +33,22 @@ export default {
   },
   data() {
     return {
+      todoID: this.todo.id,
       taskIsDone: false,
     }
   },
   methods: {
+    ...mapActions('todos', [
+      'doneTask'
+    ]),
+
     checkTask() {
       this.taskIsDone = !this.taskIsDone;
+      let payload = {'key1': this.todoID, 'key2': this.taskIsDone};
+      this.doneTask(payload);
     }
+  },
+  computed: {
   }
 }
 </script>
@@ -83,7 +94,7 @@ export default {
     flex-grow: 1;
     flex-direction: column;
     justify-content: center;
-    align-items: flex-start;;
+    align-items: flex-start;
   }
 
   .strike-text{
