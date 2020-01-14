@@ -58,28 +58,5 @@ export default {
 
 <style lang="scss">
 
-  .user-thumbnail {
-    border-radius: 50%;
-    width: 40px;
-    height: 40px;
-  }
-
-  .logo-wrapper {
-    display: flex;
-    align-items: flex-end;
-    justify-content: space-between;
-  }
-
-  .logo {
-    vertical-align: sub;
-    font-size: 1.7rem;
-    font-weight: 400;
-    margin: 0;
-
-    span {
-      font-weight: bold;
-    }
-  }
-
 </style>
 
