@@ -42,7 +42,7 @@ export default {
     align-items: center;
     bottom: 0;
     background-color: white;
-    height: 56px;
+    height: 66px;
     width: 100%;
     padding: 0 $main-padding;
     border-top: 2px solid $border-dark;
