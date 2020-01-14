@@ -1,23 +1,41 @@
-# todo-vuex
+# Movie Finder
 
-> todo app with vuex integration
+Front End todo-list mobile style app made with Nuxt.js and Vuex.
 
-## Build Setup
+## Live demo
 
-``` bash
-# install dependencies
-$ npm install # Or yarn install
+[Try now!](https://vue-keep.herokuapp.com/)
 
-# serve with hot reload at localhost:3000
-$ npm run dev
 
-# build for production and launch server
-$ npm run build
-$ npm start
+## Built with
 
-# generate static project
-$ npm run generate
+* Vue.js.
+* Nuxt.js.
+* Vuex.
+* Coffee.
+
+## Why I made this project?
+
+I made this project in order to practice Nuxt.js framework and start using Vuex for state management. Also to improve skills in:
+
+#### Frontend
+
+* Improve UI design patterns.
+* Use of external libraries like Chart.js and Moment.js in Vue.
+* Vuex for state management.
+* Heroku continous delivery.
+
+## Running local
+
+You will be able to run locally with those simple commands.
+
+Install npm modules
+
+```
+npm install
 ```
 
-For detailed explanation on how things work, checkout the [Nuxt.js docs](https://github.com/nuxt/nuxt.js).
-
+```
+npm run dev
+```
+You need to keep alive server and frontend jobs in order to make searches.
